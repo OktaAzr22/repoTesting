@@ -1,0 +1,76 @@
+/* Wrapper untuk daftar pengguna */
+.users-container {
+    margin: 20px auto;
+    max-width: 900px; /* Lebar maksimal */
+    padding: 20px;
+    background-color: #fdfdfd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Heading Daftar Pengguna */
+.users-container h2 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling tabel */
+.users-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Header tabel */
+.users-container table thead th {
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Baris dan sel tabel */
+.users-container table tbody td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Baris ganjil memiliki warna latar berbeda */
+.users-container table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Hover efek pada baris tabel */
+.users-container table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Kolom kosong atau pesan jika tidak ada data */
+.users-container table tbody tr td[colspan] {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    padding: 15px;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+

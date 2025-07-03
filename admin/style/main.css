@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: "Georgia", serif; /* Gaya vintage dengan font serif */
+  background-color: #f5f5f5; /* Warna latar belakang terang */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.nav-links li a:hover {
+  background-color: #555;
+}
+
+.search-cart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-cart input {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-cart {
+  display: flex;
+  align-items: center;
+}
+
+.search-cart input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.button {
+  background-color: #333;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #555;
+}
+body,
+html {
+  background-color: blanchedalmond;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+h2 {
+  text-align: center;
+}
+.container {
+  width: 100%;
+  padding: 0;
+}
+
+.carousel,
+.carousel-inner,
+.item {
+  width: 100%;
+  height: 100vh; /* Mengatur tinggi carousel sama dengan tinggi layar */
+}
+.carousel-inner img {
+  width: 100%;
+  height: 100vh; /* Mengatur tinggi gambar sama dengan tinggi layar */
+  object-fit: cover;
+}
+
+.left.carousel-control,
+.right.carousel-control {
+  background-image: none; /* Menghilangkan default background pada kontrol carousel */
+  width: 5%;
+}
+
+.left.carousel-control span,
+.right.carousel-control span {
+  font-size: 40px; /* Ukuran ikon kontrol */
+}
+
+.main-container {
+  margin-top: 20px;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Mengatur produk berada di tengah */
+}
+
+.product-card {
+  width: 22%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  text-align: center; /* Mengatur teks di tengah */
+}
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px; /* Mengatur tinggi gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+}
+
+.product-card h3 {
+  margin: 15px 0;
+  font-size: 1.5rem; /* Mengubah ukuran font untuk nama produk */
+  font-weight: bold; /* Menambah ketebalan jika diinginkan */
+}
+.product-card p {
+  margin: 0 15px;
+  font-size: 1.25rem; /* Mengubah ukuran font untuk harga */
+  color: black;
+}
+
+/* Container untuk tombol agar berada di sebelah kiri dan kanan */
+.button-container {
+  display: flex; /* Menggunakan flexbox untuk tombol */
+  justify-content: space-around; /* Mengatur tombol bersebelahan */
+  align-items: center;
+  padding: 10px;
+}
+/* Styling tombol */
+.btn,
+.btn-succes {
+  width: 45%; /* Mengatur lebar tombol agar muat di dalam flex */
+  padding: 10px;
+  border-radius: 5px;
+  white-space: nowrap; /* Mencegah teks terpotong menjadi beberapa baris */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Teks yang terlalu panjang akan dipotong dengan "..." */
+  font-size: 1rem; /* Ukuran font */
+}
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn-succes {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.btn-succes:hover {
+  background-color: #218838;
+}

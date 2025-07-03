@@ -1,0 +1,249 @@
+body {
+  margin: 0;
+  font-family: "Georgia", serif; /* Gaya vintage dengan font serif */
+  background-color: #f5f5f5;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.banner h1 {
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Pertebal bayangan teks */
+  color: white;
+  font-size: 60px; /* Ubah ukuran font untuk lebih besar */
+  font-weight: bold;
+  animation: fadeIn 1.5s ease-in-out; /* Tambahkan animasi saat teks muncul */
+}
+
+.banner p {
+  margin: 20px 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Pertebal bayangan teks */
+  text-align: center;
+  color: white;
+  font-size: 24px; /* Sesuaikan ukuran font untuk teks paragraf */
+  animation: fadeIn 2s ease-in-out; /* Tambahkan animasi saat teks muncul */
+}
+
+/* Animasi fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Gerakkan teks dari bawah */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi semula */
+  }
+}
+
+/* Efek hover pada teks */
+.banner h1:hover,
+.banner p:hover {
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 1); /* Perbesar bayangan saat hover */
+  transform: scale(1.05); /* Sedikit perbesar teks saat hover */
+  transition: all 0.3s ease; /* Animasi saat teks diperbesar */
+}
+
+.banner {
+  background-image: url("baner.png"); /* Pastikan path ini benar */
+  background-size: cover; /* Mengisi seluruh area */
+  background-position: center; /* Menempatkan gambar di tengah */
+  height: 400px; /* Sesuaikan tinggi sesuai kebutuhan */
+  color: #fff; /* Mengubah warna teks agar kontras */
+  display: flex; /* Menggunakan flexbox untuk penataan */
+  flex-direction: column; /* Mengatur arah isi */
+  justify-content: center; /* Memusatkan isi secara vertikal */
+  align-items: center; /* Memusatkan isi secara horizontal */
+    text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+
+.welcome-text {
+  font-size: 36px; /* Membuat teks lebih besar */
+  text-align: center; /* Memusatkan teks */
+  margin-top: 20px;
+  font-weight: bold; /* Membuat teks lebih tebal */
+}
+
+.main-container {
+  padding: 60px 0;
+}
+.main-container h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #e60000;
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.product-card {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover img {
+  opacity: 0.85;
+}
+
+.product-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Harga asli yang dicoret */
+.original-price {
+  text-decoration: line-through; /* Coret */
+  color: red; /* Warna merah */
+  margin-right: 5px; /* Jarak antara harga asli dan harga diskon */
+}
+
+/* Harga setelah diskon */
+.discounted-price {
+  color: green; /* Warna hijau */
+  font-weight: bold; /* Cetak tebal */
+}
+
+.product-card .btn {
+  padding: 10px;
+  width: 100px; /* Set width agar tombol sama besar */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; /* Jarak antar tombol */
+  transition: background-color 0.3s ease;
+}
+
+.product-card .btn.buy {
+  background-color: #e60000; /* Merah untuk tombol beli */
+}
+
+.product-card .btn.buy:hover {
+  background-color: darkred; /* Efek hover */
+}
+
+.product-card .btn.add {
+  background-color: green; /* Hijau untuk tombol tambah ke keranjang */
+}
+
+.product-card .btn.add:hover {
+  background-color: darkgreen; /* Efek hover */
+}
+
+/* Label Diskon */
+.discount-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #e60000;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Input jumlah */
+.quantity-input {
+  width: 60px;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Pesan error */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+    .category-section {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .category-grid {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .category-card {
+        width: 150px;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .category-card:hover {
+        transform: scale(1.05);
+    }
+
+    .category-card img {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .category-card h3 {
+        margin: 0;
+        font-size: 16px;
+    }
+       
+    .lihat-selengkapnya-btn {
+    background-color: #5c4033; /* Warna coklat tua */
+    color: white; /* Warna teks */
+    border: none; /* Hilangkan border */
+    padding: 10px 20px; /* Ukuran padding untuk tombol */
+    cursor: pointer; /* Pointer kursor saat hover */
+    text-decoration: none; /* Hilangkan garis bawah di teks */
+    border-radius: 5px; /* Buat ujung tombol melengkung */
+    font-size: 16px;
+    position: relative;
+    float: right;
+    margin-top: 110px;
+}
+
+.lihat-selengkapnya-btn a {
+    text-decoration: none; /* Hilangkan garis bawah pada link */
+    color: white; /* Warna teks di dalam link */
+}
+
+.lihat-selengkapnya-btn:hover {
+    background-color: #4b3228; /* Sedikit gelapkan warna coklat saat hover */
+    transition: background-color 0.3s ease; /* Tambahkan transisi halus */
+}
