@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Icon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            border-radius: 30px;
+            padding: 5px 15px;
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            background: none;
+            color: white;
+            font-size: 16px;
+            margin-right: 10px;
+            width: 200px;
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+
+        .search-button {
+            background-color: red;
+            border: none;
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .search-button svg {
+            stroke: black;
+        }
+
+        .search-button:hover {
+            background-color: #ff6666;
+        }
+
+        .search-button:active {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input" id="searchInput">
+        <button class="search-button" id="searchButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        const searchButton = document.getElementById('searchButton');
+        const searchInput = document.getElementById('searchInput');
+
+        // Fungsi untuk melakukan pencarian
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (query) {
+                // Misalnya, arahkan ke halaman pencarian atau lakukan sesuatu dengan query
+                console.log('Mencari:', query);
+                alert('Mencari: ' + query);
+
+                // Contoh, Anda dapat mengarahkan ke halaman lain dengan query sebagai parameter
+                // window.location.href = 'search-results.html?query=' + encodeURIComponent(query);
+            } else {
+                alert('Masukkan kata kunci untuk mencari!');
+            }
+        }
+
+        // Event listener untuk tombol pencarian
+        searchButton.addEventListener('click', performSearch);
+
+        // Event listener untuk tombol "Enter" pada input pencarian
+        searchInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

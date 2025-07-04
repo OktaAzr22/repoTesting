@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi Interaktif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .notification {
+            width: 350px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .notification h2 {
+            margin: 0;
+            font-size: 18px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            color: #333;
+        }
+
+        .notif-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .notif-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        .event-icon {
+            background-color: #4CAF50;
+        }
+
+        .settings-icon {
+            background-color: #FFC107;
+        }
+
+        .admin-icon {
+            background-color: #00BCD4;
+        }
+
+        .notif-text {
+            flex-grow: 1;
+        }
+
+        .notif-text p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .notif-text small {
+            color: #999;
+        }
+
+        .see-all {
+            text-align: center;
+            font-size: 14px;
+            color: #007BFF;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .see-all:hover {
+            text-decoration: underline;
+        }
+
+        .notif-details {
+            display: none;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .notif-details p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="notification">
+        <h2>Notification</h2>
+
+        <!-- Notifikasi 1: Acara Hari Ini -->
+        <div class="notif-item" id="event-today">
+            <div class="notif-icon event-icon">📅</div>
+            <div class="notif-text">
+                <p><strong>Acara Hari Ini</strong></p>
+                <small>Sekadar pengingat bahwa Anda memiliki acara hari ini</small>
+            </div>
+        </div>
+        <div class="notif-details" id="event-details">
+            <p><strong>Judul acara:</strong> Self-development webinar</p>
+            <p><strong>Waktu:</strong> September 25 2024, 10:00 WIB</p>
+            <p><strong>Lokasi:</strong> Zoom (Tautan akan dikirim melalui email)</p>
+            <p><strong>Pembicara:</strong> Budi Santoso</p>
+        </div>
+
+        <!-- Notifikasi 2: Pengaturan -->
+        <div class="notif-item" id="settings">
+            <div class="notif-icon settings-icon">⚙️</div>
+            <div class="notif-text">
+                <p><strong>Pengaturan</strong></p>
+                <small>perbarui dashboard</small>s
+            </div>
+        </div>
+        <div class="notif-details" id="settings-details">
+            <p>Anda perlu memperbarui dasbor untuk mendapatkan fitur terbaru.</p>
+        </div>
+
+        <!-- Notifikasi 3: Admin Baru -->
+        <div class="notif-item" id="admin">
+            <div class="notif-icon admin-icon">🔗</div>
+            <div class="notif-text">
+                <p><strong>Peluncuran Admin</strong></p>
+                <small> Admin Baru, wow! </small>
+            </div>
+        </div>
+        <div class="notif-details" id="admin-details">
+            <p>Admin baru kini memiliki fitur tambahan untuk pengelolaan pengguna yang lebih baik.</p>
+        </div>
+    </div>
+
+    <script>
+        // Ambil elemen notifikasi dan detailnya
+        const eventToday = document.getElementById('event-today');
+        const eventDetails = document.getElementById('event-details');
+        const settings = document.getElementById('settings');
+        const settingsDetails = document.getElementById('settings-details');
+        const admin = document.getElementById('admin');
+        const adminDetails = document.getElementById('admin-details');
+
+        // Fungsi untuk menampilkan/menyembunyikan detail acara hari ini
+        eventToday.addEventListener('click', function() {
+            toggleDetails(eventDetails);
+        });
+
+        // Fungsi untuk menampilkan/menyembunyikan detail pengaturan
+        settings.addEventListener('click', function() {
+            toggleDetails(settingsDetails);
+        });
+
+        // Fungsi untuk menampilkan/menyembunyikan detail admin baru
+        admin.addEventListener('click', function() {
+            toggleDetails(adminDetails);
+        });
+
+        // Fungsi umum untuk menampilkan/menyembunyikan detail notifikasi
+        function toggleDetails(detailsElement) {
+            if (detailsElement.style.display === 'none' || detailsElement.style.display === '') {
+                detailsElement.style.display = 'block';
+            } else {
+                detailsElement.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>

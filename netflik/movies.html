@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genre Grid</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            width: 80%;
+            max-width: 1000px;
+        }
+        .genre {
+            background-color: #2b2b2b;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .genre:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Genre</h1>
+
+<div class="container">
+    <div class="genre">Action</div>
+    <div class="genre">Adventure</div>
+    <div class="genre">Animation</div>
+    <div class="genre">Anime</div>
+    <div class="genre">Biography</div>
+    <div class="genre">Comedy</div>
+    <div class="genre">Crime</div>
+    <div class="genre">Documentary</div>
+    <div class="genre">Drama</div>
+    <div class="genre">Drama China</div>
+    <div class="genre">Drama Korea</div>
+    <div class="genre">Drama Thai</div>
+    <div class="genre">Drama Jepang</div>
+    <div class="genre">Family</div>
+    <div class="genre">Fantasy</div>
+    <div class="genre">History</div>
+    <div class="genre">Horror</div>
+    <div class="genre">Kids</div>
+    <div class="genre">Music</div>
+    <div class="genre">Mystery</div>
+    <div class="genre">Politics</div>
+    <div class="genre">Reality</div>
+    <div class="genre">Romance</div>
+    <div class="genre">Science Fiction</div>
+    <div class="genre">Sport</div>
+    <div class="genre">Talk</div>
+    <div class="genre">Thriller</div>
+    <div class="genre">TV Movie</div>
+</div>
+
+</body>
+</html>

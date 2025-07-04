@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streaming Film - Tema Merah Hitam</title>
+  <style>
+    /* Styling dasar untuk memastikan layout yang bagus dengan tema merah hitam */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border: 3px solid #ff0000;
+      border-radius: 10px;
+    }
+
+    /* Styling untuk overlay gambar Play */
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .video-overlay img {
+      width: 80px;
+      height: 80px;
+    }
+
+    /* Movie Information Flexbox Layout */
+    .movie-info {
+      margin-top: 30px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.8);
+      display: flex; /* Gunakan flexbox untuk membuat poster dan teks sejajar */
+    }
+
+    .poster {
+      width: 200px; /* Ukuran tetap poster */
+      height: 300px; /* Tinggi tetap */
+      object-fit: cover; /* Menjaga aspek rasio gambar agar tidak terdistorsi */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .details {
+      margin-left: 30px; /* Berikan jarak antara poster dan teks */
+      flex: 1;
+    }
+
+    .title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #ff0000;
+      text-align: left;
+    }
+
+    .rating {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #fff;
+      text-align: left;
+    }
+
+    .stars {
+      color: #ffcc00;
+    }
+
+    .description {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ddd;
+      text-align: left;
+    }
+
+    .additional-info {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #bbb;
+      text-align: left;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Video Streaming Section -->
+    <div class="video-container">
+      <video id="streamingVideo" controls>
+        <source src="video/pntr.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <!-- Overlay Play Button -->
+      <div class="video-overlay" id="videoOverlay">
+        <img src="images/play.png" alt="Play Button">
+      </div>
+    </div>
+
+    <!-- Movie Information Section -->
+    <div class="movie-info">
+      <img class="poster" src="images/pntr.jpg" alt="Movie Poster">
+      <div class="details">
+        <div class="title">Black Panther</div>
+        <div class="rating">
+          Rating: 
+          <span class="stars">★★★★☆</span> (9.5/10)
+        </div>
+        <div class="description">
+          Sebagai Raja baru dari Wakanda, T’Challa (Chadwick Boseman) masih bergumul mengenai perasaannya atas meninggalnya sang ayah, T’Chaka (John Kani). Namun ia kemudian memutuskan untuk meneruskan perjuangan sang ayah. Ketika Wakanda berada dalam ancaman dua musuh berbahaya yang dapat mengancam keselamatan negara, Black Panther berusaha membuktikan diri sebagai raja sejati Wakanda. Ia harus menggunakan kostum barunya serta kekuatannya untuk membela Wakanda dan negara lainnya.
+        </div>
+        <div class="additional-info">
+          <p><strong>Genre:</strong> Aksi, Petualangan</p>
+          <p><strong>Durasi:</strong> 2 jam 15 menit</p>
+          <p><strong>Sutradara:</strong> Ryan Coogler</p>
+          <p><strong>Tahun Rilis:</strong> 2018</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // JavaScript untuk menambahkan fungsi play dan unmute ketika overlay diklik
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('streamingVideo');
+      const overlay = document.getElementById('videoOverlay');
+
+      // Saat overlay diklik, sembunyikan overlay, mainkan video, dan buka suara
+      overlay.addEventListener('click', function() {
+        video.muted = false; // Suara otomatis dibuka
+        video.play();
+        overlay.style.display = 'none'; // Sembunyikan overlay saat video diputar
+      });
+
+      // Ketika video dipause, tampilkan overlay kembali
+      video.addEventListener('pause', function() {
+        overlay.style.display = 'flex';
+      });
+
+      // Ketika video diputar, sembunyikan overlay
+      video.addEventListener('play', function() {
+        overlay.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Bloodshot</title>
+    <style>
+        .movie-item {
+            position: relative;
+            width: 200px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        /* Styling untuk gambar poster */
+        .movie-item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+        }
+
+        .movie-item:hover img {
+            transform: scale(1.1); /* Zoom saat hover */
+        }
+
+        /* Styling untuk overlay gambar Play */
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .play-overlay img {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Efek ketika di hover (tunjuk) */
+        .movie-item:hover .play-overlay {
+            display: flex;
+        }
+
+        .movie-item-content {
+            margin-top: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .movie-item-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .movie-infos {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5px;
+        }
+
+        .movie-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .movie-info i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Movie Item Section -->
+    <div class="movie-item" id="bloodshotMovie">
+        <img src="./images/movies/blood-shot.jpg" alt="Bloodshot Poster">
+        <!-- Overlay untuk Play Button -->
+        <div class="play-overlay">
+            <img src="play.png" alt="Play Button">
+        </div>
+        <div class="movie-item-content">
+            <div class="movie-item-title">
+                Bloodshot
+            </div>
+            <div class="movie-infos">
+                <div class="movie-info">
+                    <i class="bx bxs-star"></i>
+                    <span>9.5</span>
+                </div>
+                <div class="movie-info">
+                    <i class="bx bxs-time"></i>
+                    <span>120 mins</span>
+                </div>
+                <div class="movie-info">
+                    <span>HD</span>
+                </div>
+                <div class="movie-info">
+                    <span>16+</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Menambahkan event listener untuk play overlay ketika di klik
+        document.getElementById('bloodshotMovie').addEventListener('click', function() {
+            alert('Memutar film Bloodshot!'); // Ganti ini dengan aksi yang diinginkan, misalnya navigasi ke halaman video.
+        });
+    </script>
+
+</body>
+</html>

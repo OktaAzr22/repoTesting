@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streaming Film - Tema Merah Hitam</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    
+    .container {
+      max-width: 1200px;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border: 3px solid #ff0000;
+      border-radius: 10px;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .video-overlay img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .movie-info {
+      margin-top: 30px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.8);
+      display: flex;
+    }
+
+    .poster {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .details {
+      margin-left: 30px;
+      flex: 1;
+    }
+
+    .title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #ff0000;
+      text-align: left;
+    }
+
+    .rating {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #fff;
+      text-align: left;
+    }
+
+    .stars {
+      color: #ffcc00;
+    }
+
+    .description {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ddd;
+      text-align: left;
+    }
+
+    .additional-info {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #bbb;
+      text-align: left;
+    }
+
+    .reviews {
+      margin-top: 40px;
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.8);
+      text-align: left;
+    }
+
+    .review {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+
+    .profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .username {
+      font-weight: bold;
+      font-size: 14px;
+      color: #ff0000;
+    }
+
+    .comment {
+      color: #ddd;
+      margin: 5px 0 0 0;
+    }
+
+    .review-date {
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 5px;
+      text-align: right;
+    }
+
+    .actions {
+      margin-top: 10px;
+      font-size: 14px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .action-button {
+      cursor: pointer;
+      color: #ff0000;
+    }
+
+    .action-button:hover {
+      text-decoration: underline;
+    }
+
+    .comment-form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .comment-input {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #444;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .submit-button {
+      padding: 10px;
+      border: none;
+      background-color: #e50914;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="video-container">
+      <video id="streamingVideo" controls>
+        <source src="video/st.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay" id="videoOverlay">
+        <img src="images/play.png" alt="Play Button">
+      </div>
+    </div>
+
+    <div class="movie-info">
+      <img class="poster" src="images/series/tfa.jpg" alt="Movie Poster">
+      <div class="details">
+        <div class="title">The Falcon and the Winter Soldier</div>
+        <div class="rating">
+          Rating: 
+          <span class="stars">★★★★☆</span> (9.5/10)
+        </div>
+        <div class="description">
+          Setelah peristiwa 'Avengers: Endgame,' Sam Wilson/Falcon dan Bucky Barnes/Winter Soldier bekerja sama dalam petualangan global yang menguji kemampuan mereka -- dan kesabaran mereka.
+        </div>
+        <div class="additional-info">
+          <p><strong>Genre:</strong> Action, Adventure, Drama, Sci-Fi</p>
+          <p><strong>Durasi:</strong> 50 menit</p>
+          <p><strong>Sutradara:</strong> Malcolm Spellman</p>
+          <p><strong>Tahun Rilis:</strong> 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews">
+      <h3>Ulasan Penonton (10)</h3>
+
+      <div class="comment-form">
+        <textarea class="comment-input" id="comment" placeholder="Tulis komentar Anda..." rows="3" required></textarea>
+        <button class="submit-button" id="submitComment">Kirim Komentar</button>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 1</div>
+              <div class="review-date">Tanggal: 2024-10-01</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 2</div>
+              <div class="review-date">Tanggal: 2024-10-05</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 3</div>
+              <div class="review-date">Tanggal: 2024-10-12</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 4</div>
+              <div class="review-date">Tanggal: 2024-09-11</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 5</div>
+              <div class="review-date">Tanggal: 2024-10-07</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 5</div>
+              <div class="review-date">Tanggal: 2024-10-01</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 6</div>
+              <div class="review-date">Tanggal: 2024-10-07</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 7</div>
+              <div class="review-date">Tanggal: 2024-10-02</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 8</div>
+              <div class="review-date">Tanggal: 2024-08-01</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 9</div>
+              <div class="review-date">Tanggal: 2024-07-22</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="reviewList">
+        <div class="review">
+          <div class="review-header">
+            <img class="profile-pic" src="images/profil.png" alt="Profile Picture">
+            <div>
+              <div class="username">Pengguna 10</div>
+              <div class="review-date">Tanggal: 2024-10-01</div>
+            </div>
+          </div>
+          <div class="comment">Film yang sangat mengesankan! Efek visualnya luar biasa.</div>
+          <div class="actions">
+            <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+            <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+            <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+            <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <script>
+    var videoOverlay = document.getElementById('videoOverlay');
+    var video = document.getElementById('streamingVideo');
+
+    videoOverlay.addEventListener('click', function() {
+      video.play();
+      videoOverlay.style.display = 'none';
+    });
+
+    video.addEventListener('pause', function() {
+      videoOverlay.style.display = 'flex';
+    });
+
+    video.addEventListener('play', function() {
+      videoOverlay.style.display = 'none';
+    });
+
+    var submitButton = document.getElementById('submitComment');
+    submitButton.addEventListener('click', function() {
+      var commentText = document.getElementById('comment').value;
+      if (commentText.trim() === '') {
+        return;
+      }
+
+      var reviewList = document.getElementById('reviewList');
+      var newReview = document.createElement('div');
+      newReview.classList.add('review');
+
+      var reviewHeader = document.createElement('div');
+      reviewHeader.classList.add('review-header');
+      
+ 
+
+      var userInfo = document.createElement('div');
+      var username = document.createElement('div');
+      username.classList.add('username');
+      username.textContent = 'Pengguna Baru';
+      var reviewDate = document.createElement('div');
+      reviewDate.classList.add('review-date');
+      var currentDate = new Date().toISOString().split('T')[0];
+      reviewDate.textContent = 'Tanggal: ' + currentDate;
+
+      userInfo.appendChild(username);
+      userInfo.appendChild(reviewDate);
+
+      
+
+      var comment = document.createElement('div');
+      comment.classList.add('comment');
+      comment.textContent = commentText;
+
+      var actions = document.createElement('div');
+      actions.classList.add('actions');
+      actions.innerHTML = `
+        <span class="action-button"><i class="fas fa-thumbs-up"></i> Like</span>
+        <span class="action-button"><i class="fas fa-thumbs-down"></i> Dislike</span>
+        <span class="action-button"><i class="fas fa-reply"></i> Reply</span>
+        <span class="action-button"><i class="fas fa-exclamation-triangle"></i> Laporkan</span>
+      `;
+
+      newReview.appendChild(reviewHeader);
+      newReview.appendChild(comment);
+      newReview.appendChild(actions);
+
+      reviewList.prepend(newReview);
+
+      document.getElementById('comment').value = '';
+    });
+  </script>
+
+</body>
+</html>

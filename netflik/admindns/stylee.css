@@ -1,0 +1,129 @@
+/* Custom CSS untuk tata letak dan gaya tambahan */
+    body {
+        background-color: black;
+        color: white;
+        margin: 0px;
+        padding: 0px;
+        font-family: 'open sans', sans-serif;
+    }
+    .jumbotron {
+      background-color: forestgreen;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    .card {
+      background-color: black;
+      color: white;
+    }
+    .container {
+      padding:0px 0px;
+      color: darkgray;
+    }
+    .container img {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+    }
+    .footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+   .partners-list {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .kartu-partners p{
+    font-family: 'open sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: left;
+    color: white;
+  }
+
+  .kartu-partners {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .kartu-partners img {
+    width: 140px;
+    border-radius: 50%;
+  }
+
+  .wrapper {
+    width: 200%;
+    margin: auto;
+    position: relative;
+  }
+
+  /*logo*/
+  .logo a {
+    font-weight: bold;
+    float: left;
+    color: white;
+  }
+
+  h5, h2{
+    font-weight: bold; 
+    color: white;
+  }
+
+  nav {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    line-height: 67px;
+    position: sticky;
+    top: 0;
+    background: black;
+    z-index: 1;
+    border-bottom: 1px;
+  }
+
+  nav ul{
+    list-style-type: none;  
+    margin: 10px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  nav ul li {
+    float: left;
+    margin: 8px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-align: center;
+    padding: 0px 8px 0px 8px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    text-decoration: none;
+    color: white;
+  }
+  a.tbl-menu {
+    background: #2D2727;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+  }
+
+  a.tbl-menu:hover{
+    background: forestgreen;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 991.98px) {
+  .kartu-partners {
+    width: 40%;
+  }
+} 
