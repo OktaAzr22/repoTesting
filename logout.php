@@ -1,6 +1,6 @@
 <?php
-session_start(); //hapus sesi
-session_destroy(); //hapus data yang ada
+session_start(); 
+session_destroy(); 
 header("Location: index.php");
 exit();
 ?>
